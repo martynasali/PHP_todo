@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "name": "Users demo",
+    "description": "description",
+    "psr-4": {
+      "ToDo\\": "app"
+    }
+  },
+  "require": {
+    "twbs/bootstrap": "5.0.0-beta1"
+  }
+}
