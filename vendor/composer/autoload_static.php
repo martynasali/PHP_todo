@@ -9,12 +9,12 @@ class ComposerStaticInitafe0e20ab2fbfcb984eee96fa176b5e4
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
-            'ToDo\\' => 5,
+            'TaskManager\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'ToDo\\' => 
+        'TaskManager\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),

@@ -1,12 +1,9 @@
 {
   "autoload": {
     "name": "Users demo",
-    "description": "description",
+    "description": "Task Manager App",
     "psr-4": {
-      "ToDo\\": "app"
+      "TaskManager\\": "app"
     }
-  },
-  "require": {
-    "twbs/bootstrap": "5.0.0-beta1"
   }
 }
