@@ -15,6 +15,12 @@ use TaskManager\Task;
 <div class="container col-6">
 <h5 class="mt-3 display-4"><?=$title;?></h5>
 
+    <?php if (!empty($validation)): ?>
+    <?php foreach ($validation as $error): ?>
+        <div class="alert alert-danger"><?= $error; ?></div>
+    <?php endforeach; ?>
+    <?php endif; ?>
+
 
 <div class="mt-2 row">
 
@@ -63,7 +69,7 @@ use TaskManager\Task;
     <button type="button" class="mt-2 mb-2 btn btn-primary position-relative">
         <a style="text-decoration: none;" class="link-light" href="http://192.168.64.2/PHP_todo/">
             Įvestos užduotys <span class=" position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"><?=$i++;?> <span class="visually-hidden">Įvestos užduotys</span></span>  </a></button>
-    <button type="submit" class="btn btn-danger" name="send">Prideti</button>
+    <button type="submit" class="btn btn-danger" id="send" name="send">Prideti</button>
 </div>
 
 </form>
