@@ -4,26 +4,36 @@
 namespace TaskManager;
 
 
- class Validation
+class Validation
 {
-    static public $validation = [];
-    static public $data;
+    private static $errors = [];
 
-
-    public static function validateName($data)
+    public static function validation($data)
     {
-        self::$data;
-
-        if (empty($data['subject']) || !preg_match('/\w{5,255}$/', $data['subject'])) {
-            self::$validation[] = 'Nepasirinkote skrydžio numerio';
-        }
-
+        self::validateSubject($data);
+        self::validatePriority($data);
+        self::validateDate($data);
+        return self::$errors;
     }
 
-    static public function validationErr($validation){
-       foreach ($validation as $error){
-    echo "<div class='col alert alert-danger' role='alert'>";
-    echo "$error";
-    echo "</div>";}
+    private function validateSubject()
+    {
+        if (empty($_POST['subject']) || !preg_match('/\w{5,255}$/', $_POST['subject'])) {
+            self::$errors[] = "Neįvesta užuotis";
+        }
+    }
+
+    private function validatePriority()
+    {
+        if ($_POST['priority'] == "Prioritetas") {
+            self::$errors[] = "Nepasirinktas prioritetas";
+        }
+    }
+
+    private function validateDate()
+    {
+        if ($_POST['dueDate'] < date("Y-m-d")) {
+            self::$errors[] = "Blogai pasirinkta arba nepasirinkta data";
+        }
     }
 }

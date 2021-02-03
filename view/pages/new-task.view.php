@@ -16,9 +16,9 @@ use TaskManager\Task;
 <h5 class="mt-3 display-4"><?=$title;?></h5>
 
     <?php if (!empty($validation)): ?>
-    <?php foreach ($validation as $error): ?>
-        <div class="alert alert-danger"><?= $error; ?></div>
-    <?php endforeach; ?>
+        <?php foreach ($validation as $error): ?>
+            <div class="alert alert-danger"><?= $error; ?></div>
+        <?php endforeach; ?>
     <?php endif; ?>
 
 
